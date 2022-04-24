@@ -1,6 +1,10 @@
 import time 
 import pandas as pd
 
+from parser import volontariParser
+
+from parser.volontariParser import parseElencoTotaleQualificheFormazione
+
 
 def readDf(INPUT_FOLDER: str, fileName: str):
     path = INPUT_FOLDER + '//' + fileName
@@ -24,6 +28,9 @@ def main():
 
     # Read Formazione
     df_formazione = readDf(INPUT_FOLDER, "elenco_formazione.xlsx")
+
+    # Parse DF Elenco Totale and DF Formazione
+    dictVolontari = parseElencoTotaleQualificheFormazione(df_elenco_totale, df_formazione)
 
     # Read Servizi
     df_elenco_servizi = readDf(INPUT_FOLDER, "elenco_servizi.xlsx")

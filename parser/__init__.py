@@ -1,0 +1,1 @@
+from .volontariParser import parseElencoTotaleQualificheFormazione
