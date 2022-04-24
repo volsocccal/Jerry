@@ -1,4 +1,4 @@
-from ..volcalenums import MezzoType
+from volcalenums import MezzoType
 
 class Automezzo:
      def __init__(self, 
