@@ -1,6 +1,5 @@
 from volcalenums.formazione import FormazioneType
 from volcalenums.qualifiche import QualificaType
-from utilities.writeExcel import write_excel
 
 def getAllVolontariWithFormazione(dictVolontari, formazione: FormazioneType):
     """Get all Volontari with given Formazione"""
