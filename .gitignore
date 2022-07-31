@@ -130,4 +130,6 @@ dmypy.json
 
 # Data
 data/*.xlsx
+data/*.xls
+data/*.csv
 output/*
