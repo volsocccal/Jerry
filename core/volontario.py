@@ -41,3 +41,9 @@ class Volontario:
     
     def printConsole(self):
         print(self.toString())
+
+    def hasQualifica(self, q: Qualifica) -> bool:
+        return q in self._qualifiche
+
+    def hasFormazione(self, f: Formazione) -> bool:
+        return f in self._formazione
