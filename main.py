@@ -2,6 +2,8 @@ import time
 import pandas as pd
 
 from parser import volontariParser
+from volcalenums import QualificaType
+from constraintsChecker.hasQualifica import getAllVolontariWithQualifica
 
 from parser.volontariParser import parseElencoTotaleQualificheFormazione
 
@@ -32,9 +34,13 @@ def main():
     # Parse DF Elenco Totale and DF Formazione
     dictVolontari = parseElencoTotaleQualificheFormazione(df_elenco_totale, df_formazione)
 
+    # Produce Elenchi Qualifiche
+    getAllVolontariWithQualifica(dictVolontari, QualificaType.AUTISTA_A)
+
     # Read Servizi
     df_elenco_servizi = readDf(INPUT_FOLDER, "elenco_servizi.xlsx")
     df_elenco_servizi.drop(['GG', 'Partenza', 'Arrivo', 'Km inizio', 'Km fine', 'Km', 'Assistiti', 'N. Serv.', 'F. Viag.', 'Importo', 'Per.Fatturazione'], axis=1,inplace=True)
+    df_elenco_servizi['Intervento'] = df_elenco_servizi['Intervento'].str.replace('IN CONVENZIONE', 'ALLA PERSONA')
 
     # Read TURNI
     df_elenco_turni = readDf(INPUT_FOLDER, "elenco_turni.xlsx")
