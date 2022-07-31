@@ -17,24 +17,24 @@ class Volontario:
                 squadra: SquadraType,
                 qualifiche: list[Qualifica],
                 formazione: list[Formazione]):
-        self.name = name
-        self.surname = surname
-        self.CF = CF
-        self.ID = ID
-        self.birthDate = birthdate
-        self.age = computeAge(self.birthDate)
-        self.squadra = squadra
-        self.qualifiche = qualifiche
-        self.formazione = formazione
+        self._name = name
+        self._surname = surname
+        self._CF = CF
+        self._ID = ID
+        self._birthDate = birthdate
+        self._age = computeAge(self._birthDate)
+        self._squadra = squadra
+        self._qualifiche = qualifiche
+        self._formazione = formazione
 
     def toString(self, separator:str = '\n') -> str:
-        return 'name:' + self.name + separator \
-            + 'surname: ' + self.surname + separator \
-                + 'CF: ' + self.CF + separator \
-                    + 'ID: ' + self.ID + separator \
-                        + 'birthdate: ' + str(self.birthDate) + separator \
-                            + 'age: ' + str(self.age) + separator \
-                                + 'squadra: ' + str(self.squadra) + separator
+        return 'name:' + self._name + separator \
+            + 'surname: ' + self._surname + separator \
+                + 'CF: ' + self._CF + separator \
+                    + 'ID: ' + self._ID + separator \
+                        + 'birthdate: ' + str(self._birthDate) + separator \
+                            + 'age: ' + str(self._age) + separator \
+                                + 'squadra: ' + str(self._squadra) + separator
 
     def toCSV(self) -> str:
         return self.toString(';')
