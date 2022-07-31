@@ -35,7 +35,7 @@ def main():
     dictVolontari = parseElencoTotaleQualificheFormazione(df_elenco_totale, df_formazione)
 
     # Produce Elenchi Qualifiche
-    getAllVolontariWithQualifica(dictVolontari, QualificaType.AUTISTA_A)
+    autisti_A = getAllVolontariWithQualifica(dictVolontari, QualificaType.AUTISTA_A)
 
     # Read Servizi
     df_elenco_servizi = readDf(INPUT_FOLDER, "elenco_servizi.xlsx")
